@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc.json",
+  "extends": [
+    "../.eslintrc.json"
+  ],
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "expect": true
+  },
+  "parserOptions": {
+    "project": "test/tsconfig.json"
+  }
+}

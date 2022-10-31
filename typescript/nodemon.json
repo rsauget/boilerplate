@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/nodemon.json",
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "dist/**"
+  ],
+  "execMap": {
+    "ts": "ts-node-esm --experimental-specifier-resolution=node"
+  },
+  "ext": "ts,js"
+}

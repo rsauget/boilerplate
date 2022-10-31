@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/mocharc.json",
+  "loader": "ts-node/esm",
+  "extension": [
+    "js",
+    "ts"
+  ],
+  "color": true,
+  "check-leaks": true,
+  "spec": [
+    "test/**"
+  ],
+  "node-option": [
+    "loader=ts-node/esm",
+    "experimental-specifier-resolution=node"
+  ]
+}

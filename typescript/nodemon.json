@@ -6,7 +6,7 @@
     "dist/**"
   ],
   "execMap": {
-    "ts": "ts-node-esm --experimental-specifier-resolution=node"
+    "ts": "ts-node-esm"
   },
   "ext": "ts,js"
 }

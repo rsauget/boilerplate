@@ -1,4 +1,4 @@
-import Chai from 'chai';
+import * as Chai from 'chai';
 
 declare global {
   // eslint-disable-next-line no-var

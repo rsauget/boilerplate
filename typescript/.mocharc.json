@@ -8,10 +8,6 @@
   "color": true,
   "check-leaks": true,
   "spec": [
-    "test/**"
-  ],
-  "node-option": [
-    "loader=ts-node/esm",
-    "experimental-specifier-resolution=node"
+    "test/**/*.[jt]s"
   ]
 }

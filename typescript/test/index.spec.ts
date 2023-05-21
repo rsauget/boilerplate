@@ -1,4 +1,4 @@
-import { foo } from '../src/foo';
+import { foo } from '../src/foo.js';
 
 describe('index.ts', () => {
   it('returns bar', () => {

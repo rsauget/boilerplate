@@ -10,6 +10,7 @@ export default antfu(
       semi: true,
     },
     typescript: {
+      erasableOnly: true,
       tsconfigPath: './tsconfig.json',
     },
   },

@@ -1,7 +1,18 @@
 import antfu from '@antfu/eslint-config'
 
-export default antfu({
-  type: 'lib',
-  stylistic: true,
-  typescript: true,
-})
+import relativeTsExtensions from './eslint-rules/relative-ts-extensions.js'
+
+export default antfu(
+  {
+    type: 'lib',
+    stylistic: true,
+    typescript: true,
+  },
+  {
+    files: ['**/*.ts'],
+    plugins: { local: relativeTsExtensions },
+    rules: {
+      'local/relative-ts-extensions': 'error',
+    },
+  },
+)

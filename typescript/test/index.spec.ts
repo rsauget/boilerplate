@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { foo } from '../src/foo.js'
+import { foo } from '../src/foo.ts'
 
 describe('index.ts', () => {
   it('returns bar', () => {

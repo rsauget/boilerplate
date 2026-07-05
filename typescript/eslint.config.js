@@ -1,11 +1,14 @@
-import antfu from '@antfu/eslint-config'
+import antfu from '@antfu/eslint-config';
 
-import relativeTsExtensions from './eslint-rules/relative-ts-extensions.js'
+import relativeTsExtensions from './eslint-rules/relative-ts-extensions.js';
 
 export default antfu(
   {
     type: 'lib',
-    stylistic: true,
+    stylistic: {
+      quotes: 'single',
+      semi: true,
+    },
     typescript: true,
   },
   {
@@ -15,4 +18,4 @@ export default antfu(
       'local/relative-ts-extensions': 'error',
     },
   },
-)
+);

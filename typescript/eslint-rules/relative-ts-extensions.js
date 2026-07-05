@@ -1,5 +1,5 @@
-import fs from 'node:fs'
-import path from 'node:path'
+import fs from 'node:fs';
+import path from 'node:path';
 
 /**
  * TypeScript's `rewriteRelativeImportExtensions` expects relative imports to use the
@@ -8,17 +8,17 @@ import path from 'node:path'
  */
 function checkSource(context, source) {
   if (typeof source.value !== 'string' || !source.value.startsWith('.') || !source.value.endsWith('.js'))
-    return
+    return;
 
-  const jsPath = path.resolve(path.dirname(context.filename), source.value)
-  const tsPath = jsPath.replace(/\.js$/, '.ts')
+  const jsPath = path.resolve(path.dirname(context.filename), source.value);
+  const tsPath = jsPath.replace(/\.js$/, '.ts');
 
   if (fs.existsSync(tsPath) && !fs.existsSync(jsPath)) {
     context.report({
       node: source,
       message: 'Relative imports should use the .ts extension of the source file; it is rewritten to .js at build time.',
       fix: fixer => fixer.replaceText(source, JSON.stringify(source.value.replace(/\.js$/, '.ts'))),
-    })
+    });
   }
 }
 
@@ -36,8 +36,8 @@ export default {
           ExportNamedDeclaration: node => node.source && checkSource(context, node.source),
           ExportAllDeclaration: node => checkSource(context, node.source),
           ImportExpression: node => node.source.type === 'Literal' && checkSource(context, node.source),
-        }
+        };
       },
     },
   },
-}
+};

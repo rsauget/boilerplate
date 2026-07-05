@@ -22,6 +22,9 @@ export default antfu(
       },
       tsconfigPath: './tsconfig.json',
     },
+    unicorn: {
+      allRecommended: true,
+    },
   },
   {
     files: ['**/*.ts'],

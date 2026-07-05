@@ -11,6 +11,12 @@ export default antfu(
     },
     typescript: {
       erasableOnly: true,
+      overridesTypeAware: {
+        'ts/no-misused-spread': 'error',
+        'ts/no-unnecessary-condition': 'error',
+        'ts/prefer-nullish-coalescing': 'error',
+        'ts/prefer-optional-chain': 'error',
+      },
       tsconfigPath: './tsconfig.json',
     },
   },

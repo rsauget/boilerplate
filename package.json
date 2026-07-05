@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "boilerplate",
+  "private": true,
+  "packageManager": "pnpm@11.10.0"
+}

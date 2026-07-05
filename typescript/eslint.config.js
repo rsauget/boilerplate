@@ -9,7 +9,9 @@ export default antfu(
       quotes: 'single',
       semi: true,
     },
-    typescript: true,
+    typescript: {
+      tsconfigPath: './tsconfig.json',
+    },
   },
   {
     files: ['**/*.ts'],

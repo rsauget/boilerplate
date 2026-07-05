@@ -11,6 +11,9 @@ defaults:
   run:
     working-directory: typescript
 
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -35,6 +38,6 @@ jobs:
 
       - name: Verify native dev execution (node --watch)
         run: |
-          OUTPUT=$(timeout 5 node --watch src/index.ts || true)
+          OUTPUT=$(timeout 5 npm run dev || true)
           echo "$OUTPUT"
           echo "$OUTPUT" | grep -q "bar"

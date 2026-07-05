@@ -5,6 +5,9 @@ import relativeTsExtensions from './eslint-rules/relative-ts-extensions.js';
 export default antfu(
   {
     type: 'lib',
+    e18e: {
+      moduleReplacements: true,
+    },
     stylistic: {
       quotes: 'single',
       semi: true,

@@ -1,4 +1,4 @@
-import { foo } from './foo.js';
+import { foo } from './foo.ts';
 
 // eslint-disable-next-line no-console
 console.log(foo());

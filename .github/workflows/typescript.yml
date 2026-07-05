@@ -1,0 +1,43 @@
+name: typescript
+
+on:
+  pull_request:
+    paths:
+      - typescript/**
+      - .github/workflows/typescript.yml
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: typescript
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: typescript/.nvmrc
+          cache: npm
+          cache-dependency-path: typescript/package-lock.json
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run typecheck
+
+      - run: npm run build
+
+      - run: npm test
+
+      - name: Verify native dev execution (node --watch)
+        run: |
+          OUTPUT=$(timeout 5 npm run dev || true)
+          echo "$OUTPUT"
+          echo "$OUTPUT" | grep -q "bar"

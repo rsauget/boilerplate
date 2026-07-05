@@ -4,11 +4,12 @@ on:
   pull_request:
     paths:
       - typescript/**
-      - pnpm-workspace.yaml
-      - pnpm-lock.yaml
-      - package.json
       - .github/workflows/typescript.yml
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: typescript
 
 permissions:
   contents: read
@@ -20,29 +21,26 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v6
+        with:
+          version: 11.10.0
 
       - uses: actions/setup-node@v4
         with:
           node-version-file: typescript/.nvmrc
           cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
+          cache-dependency-path: typescript/pnpm-lock.yaml
 
       - run: pnpm install --frozen-lockfile
 
       - run: pnpm run lint
-        working-directory: typescript
 
       - run: pnpm run typecheck
-        working-directory: typescript
 
       - run: pnpm run build
-        working-directory: typescript
 
       - run: pnpm test
-        working-directory: typescript
 
       - name: Verify native dev execution (node --watch)
-        working-directory: typescript
         run: |
           OUTPUT=$(timeout 5 pnpm run dev || true)
           echo "$OUTPUT"

@@ -3,6 +3,7 @@
   "name": "boilerplate-typescript",
   "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@11.10.0",
   "description": "",
   "author": "Raphaël Sauget",
   "license": "ISC",

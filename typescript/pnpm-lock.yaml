@@ -6,9 +6,7 @@ settings:
 
 importers:
 
-  .: {}
-
-  typescript:
+  .:
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^9.1.0

@@ -3,7 +3,7 @@
   "name": "boilerplate-typescript",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@11.10.0",
+  "packageManager": "pnpm@11.18.0",
   "description": "",
   "author": "Raphaël Sauget",
   "license": "ISC",
@@ -20,14 +20,14 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^9.1.0",
+    "@antfu/eslint-config": "^9.2.0",
     "@tsconfig/node-ts": "^23.6.4",
     "@tsconfig/node24": "^24.0.4",
     "@tsconfig/recommended": "^1.0.13",
     "@tsconfig/strictest": "^2.0.8",
-    "@types/node": "^24.13.2",
-    "eslint": "^10.6.0",
+    "@types/node": "^24.13.3",
+    "eslint": "^10.8.0",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.10"
   }
 }
